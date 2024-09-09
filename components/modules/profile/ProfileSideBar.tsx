@@ -28,9 +28,8 @@ const ProfileSideBar = () => {
         </button>
       </div>
       <ul className="w-full h-[calc(100%-5.5rem)] mt-6 overflow-y-auto">
-        <div className="bg-base-200 ring-1 ring-base-300 size-12 mx-auto mt-[1px] rounded-full"></div>
         {links.map((link) => (
-          <li key={link.name} className="mx-auto w-max mt-1 first-of-type:mt-2">
+          <li key={link.name} className="mx-auto w-max mt-1 first:mt-0">
             <button className="btn btn-square btn-ghost" title={link.name} aria-label={link.name}>
               {link.icon}
             </button>
