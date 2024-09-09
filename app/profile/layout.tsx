@@ -1,5 +1,3 @@
-import React from "react"
-
 import ProfileHeader from "@/components/modules/profile/ProfileHeader"
 import ProfileSideBar from "@/components/modules/profile/ProfileSideBar"
 import ProfileCover from "@/components/modules/profile/ProfileCover"

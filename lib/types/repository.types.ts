@@ -1,4 +1,4 @@
-type RepositoryT = {
+export type RepositoryT = {
   name: string
   description: string
   html_url: string
@@ -10,5 +10,3 @@ type RepositoryT = {
   }
   updated_at: string
 }
-
-export default RepositoryT

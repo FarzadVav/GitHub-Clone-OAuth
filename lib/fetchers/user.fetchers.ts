@@ -1,9 +1,10 @@
-import { cookieOptions, verifySession } from "@/lib/sessions"
-import UserT from "@/lib/types/user.types"
 import { cookies } from "next/headers"
-import FollowerT from "../types/follower.types"
 
-const getUser = async () => {
+import { cookieOptions, verifySession } from "@/lib/sessions"
+import { UserT } from "@/lib/types/user.types"
+import { FollowerT } from "@/lib/types/follower.types"
+
+export const getUser = async () => {
   const session = cookies().get(cookieOptions.name)?.value
   if (!session) {
     return null
@@ -44,5 +45,3 @@ export const getFollowers = async (url?: string) => {
   const followers = await githubResponse.json() as FollowerT[]
   return followers
 }
-
-export default getUser

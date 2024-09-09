@@ -1,4 +1,4 @@
-type UserT = {
+export type UserT = {
   login: string
   html_url: string
   avatar_url: string
@@ -11,5 +11,3 @@ type UserT = {
   created_at: string
   updated_at: string
 }
-
-export default UserT

@@ -1,7 +1,7 @@
 import { verifySession } from "@/lib/sessions"
-import RepositoryT from "@/lib/types/repository.types"
+import { RepositoryT } from "@/lib/types/repository.types"
 
-const getRepositories = async () => {
+export const getRepositories = async () => {
   const session = await verifySession()
   if (!session) {
     return null
@@ -21,5 +21,3 @@ const getRepositories = async () => {
   const responseResult = (await repositoriesResponse.json()) as RepositoryT[]
   return responseResult
 }
-
-export default getRepositories
