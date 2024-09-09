@@ -18,6 +18,14 @@ const ProfileCover = async () => {
 
   return (
     <div className="bg-primary w-full h-64 relative">
+      <Image
+        className="w-full h-full object-cover object-center"
+        src={"/images/cover.jpg"}
+        alt="cover"
+        width={2000}
+        height={2000}
+      />
+
       <div className="flex items-center py-3 absolute bottom-0 right-6">
         <button className="btn btn-square" title="edit cover" aria-label="edit cover">
           <PhotoIcon className="size-4" />
@@ -46,7 +54,11 @@ const ProfileCover = async () => {
 
       <div className="w-[calc(100%-13.5rem)] h-32 flex items-center absolute -bottom-32 left-[13.5rem]">
         <div className="h-full w-full flex flex-col px-6 pt-6">
-          <a className="ghost-link-btn flex items-center w-max" href={user?.html_url} target="_blank">
+          <a
+            className="ghost-link-btn flex items-center w-max"
+            href={user?.html_url}
+            target="_blank"
+          >
             <h2 className="text-3xl font-extrabold">
               {user?.login} <span className="font-bold text-xl">({user?.name})</span>
             </h2>
