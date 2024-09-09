@@ -79,7 +79,7 @@ const ProfileCover = async () => {
           <p className="text-base-content/75 mt-auto truncate">{user?.bio}</p>
         </div>
         <div className="flex items-center absolute top-6 right-6">
-          <button className="btn btn-primary font-bold">
+          <button className="btn btn-accent font-bold">
             <span>New Repository</span>
             <FolderPlusIcon strokeWidth={2} className="size-4" />
           </button>
