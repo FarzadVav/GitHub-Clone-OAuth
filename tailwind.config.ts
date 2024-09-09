@@ -8,12 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      container: { center: true, padding: { "default": "1rem", "sm": "2rem" } },
+      colors: {},
     },
   },
-  plugins: [],
-};
-export default config;
+  plugins: [
+    require('daisyui'),
+  ],
+}
+
+export default config
