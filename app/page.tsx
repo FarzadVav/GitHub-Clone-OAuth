@@ -1,14 +1,36 @@
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid"
 
 const Home = () => {
   const githubAuthorizeUrl = `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&scope=repo`
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      <form className="ring-2 ring-base-content/10 bg-base-200 p-6 rounded-lg" action="">
+    <div className="w-screen h-screen flex items-center justify-center overflow-hidden">
+      <motion.form
+        className="ring-2 ring-base-content/10 bg-base-200 p-6 rounded-lg"
+        initial={{ y: 15, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        action=""
+      >
         <div className="flex items-center">
-          <Image src={"/gifs/cat.gif"} alt="github cat gif" width={120} height={120} />
+          <motion.div
+            className="w-[120px]"
+            initial={{ scale: 0, rotate: 45, opacity: 0 }}
+            animate={{ scale: 1, rotate: 0, opacity: 1 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+          >
+            <Image
+              className="w-full"
+              src={"/gifs/cat.gif"}
+              alt="github cat gif"
+              width={120}
+              height={120}
+            />
+          </motion.div>
           <h1 className="font-extrabold text-2xl ml-3">
             Please sign to your <br /> GitHub account{" "}
           </h1>
@@ -31,7 +53,7 @@ const Home = () => {
             Your dont have an account?
           </a>
         </div>
-      </form>
+      </motion.form>
     </div>
   )
 }
