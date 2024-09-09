@@ -11,6 +11,7 @@ import {
 } from "@heroicons/react/24/outline"
 
 import { getUser, getFollowers } from "@/lib/fetchers/user.fetchers"
+import ProfileFollowersButton from "./ProfileFollowersButton"
 
 const ProfileCover = async () => {
   const user = await getUser()
@@ -66,9 +67,7 @@ const ProfileCover = async () => {
           </a>
           <div className="flex items-center gap-3 mt-1.5">
             <div className="border-r border-base-content/10 pr-4 mr-1">
-              <button className="ghost-link-btn italic font-semibold">
-                {followrs?.length} Followers
-              </button>
+              <ProfileFollowersButton followrs={followrs || []} />
             </div>
             <div className="flex items-center">
               <MapPinIcon className="size-4" />
