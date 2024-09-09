@@ -1,4 +1,4 @@
-import getUser from "@/lib/fetchers/user.fetcher"
+import Image from "next/image"
 import {
   ArrowUpRightIcon,
   ArrowUpTrayIcon,
@@ -9,10 +9,12 @@ import {
   PencilSquareIcon,
   PhotoIcon,
 } from "@heroicons/react/24/outline"
-import Image from "next/image"
+
+import getUser, { getFollowers } from "@/lib/fetchers/user.fetcher"
 
 const ProfileCover = async () => {
   const user = await getUser()
+  const followrs = await getFollowers(user?.followers_url)
   console.log("user ------------------------>", user)
 
   return (
@@ -45,32 +47,36 @@ const ProfileCover = async () => {
 
       <div className="w-[calc(100%-13.5rem)] h-32 flex items-center absolute -bottom-32 left-[13.5rem]">
         <div className="h-full w-full flex flex-col px-6 pt-6">
-          <a className="flex items-center w-max" href={user?.html_url} target="_blank">
-            <h2 className="text-3xl font-extrabold">{user?.name}</h2>
-            <ArrowUpRightIcon strokeWidth={3} className="size-6 ml-3" />
+          <a className="ghost-link-btn flex items-center w-max" href={user?.html_url} target="_blank">
+            <h2 className="text-3xl font-extrabold">
+              {user?.login} <span className="font-bold text-xl">({user?.name})</span>
+            </h2>
+            <ArrowUpRightIcon strokeWidth={2} className="size-6 ml-3" />
           </a>
           <div className="flex items-center gap-3 mt-1.5">
-            <span className="border-r border-base-content/10 italic font-semibold pr-4 mr-1">
-              3,569 Followers
-            </span>
+            <div className="border-r border-base-content/10 pr-4 mr-1">
+              <button className="ghost-link-btn italic font-semibold">
+                {followrs?.length} Followers
+              </button>
+            </div>
             <div className="flex items-center">
               <MapPinIcon className="size-4" />
               <span className="ml-1.5">{user?.location}</span>
             </div>
             <div className="flex items-center">
               <CalendarIcon className="size-4" />
-              <span className="ml-1.5">one years ago</span>
+              <span className="ml-1.5">
+                {new Date(user?.created_at || "").toLocaleDateString()}
+              </span>
             </div>
             <div className="flex items-center">
               <ClockIcon className="size-4" />
-              <span className="ml-1.5">30m ago</span>
+              <span className="ml-1.5">
+                {new Date(user?.updated_at || "").toLocaleDateString()}
+              </span>
             </div>
           </div>
-          <p className="text-base-content/75 mt-auto truncate">
-            {user?.bio}
-            {user?.bio}
-            {user?.bio}
-          </p>
+          <p className="text-base-content/75 mt-auto truncate">{user?.bio}</p>
         </div>
         <div className="flex items-center absolute top-6 right-6">
           <button className="btn btn-primary font-bold">

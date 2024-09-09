@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .ghost-link-btn {
+    @apply transition-opacity hover:underline active:opacity-75;
+  }
+}
