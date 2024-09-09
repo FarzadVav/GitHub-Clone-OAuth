@@ -1,24 +1,20 @@
 import {
-  AcademicCapIcon,
-  AdjustmentsHorizontalIcon,
   Bars3Icon,
-  BoldIcon,
-  BriefcaseIcon,
-  CameraIcon,
-  HomeIcon,
-  SpeakerWaveIcon,
+  BookOpenIcon,
+  CubeIcon,
+  DocumentTextIcon,
+  FolderOpenIcon,
+  StarIcon,
 } from "@heroicons/react/24/outline"
 
 import getUUID from "@/lib/getUUID"
 
 const links = [
-  { icon: <HomeIcon className="size-4" />, name: "Home" },
-  { icon: <BriefcaseIcon className="size-4" />, name: "Briefcase" },
-  { icon: <SpeakerWaveIcon className="size-4" />, name: "Speaker" },
-  { icon: <AcademicCapIcon className="size-4" />, name: "Educations" },
-  { icon: <BoldIcon className="size-4" />, name: "Energy" },
-  { icon: <CameraIcon className="size-4" />, name: "Camera" },
-  { icon: <AdjustmentsHorizontalIcon className="size-4" />, name: "Filters" },
+  { name: "Overview", icon: <BookOpenIcon className="size-4" /> },
+  { name: "Repositories", icon: <FolderOpenIcon className="size-4" /> },
+  { name: "Projects", icon: <DocumentTextIcon className="size-4" /> },
+  { name: "Packages", icon: <CubeIcon className="size-4" /> },
+  { name: "Stars", icon: <StarIcon className="size-4" /> },
 ]
 
 const ProfileSideBar = () => {
