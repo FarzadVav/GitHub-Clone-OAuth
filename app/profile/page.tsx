@@ -22,7 +22,7 @@ const getRepositories = async () => {
   return responseResult
 }
 
-const Repos = async () => {
+const Profile = async () => {
   const repositories = await getRepositories()
   // @ts-ignore
   console.log("repositories --------------------->", repositories[0])
@@ -36,4 +36,4 @@ const Repos = async () => {
   )
 }
 
-export default Repos
+export default Profile

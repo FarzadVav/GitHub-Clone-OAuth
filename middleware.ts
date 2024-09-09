@@ -13,13 +13,13 @@ export default async function middleware(request: NextRequest) {
   const isSessionValid = getMeResponse.ok
 
   if (isSessionValid) {
-    const response = pathname.includes("/repos")
+    const response = pathname.includes("/profile")
       ? NextResponse.next()
-      : NextResponse.redirect(new URL("/repos", request.url))
+      : NextResponse.redirect(new URL("/profile", request.url))
 
     return response
   } else {
-    const response = pathname.includes("/repos")
+    const response = pathname.includes("/profile")
       ? NextResponse.redirect(new URL("/", request.url))
       : NextResponse.next()
     response.cookies.delete(cookieOptions.name)
@@ -29,5 +29,5 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/repos"],
+  matcher: ["/", "/profile"],
 }
