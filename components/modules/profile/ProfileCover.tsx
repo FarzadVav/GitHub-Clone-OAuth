@@ -17,7 +17,7 @@ const ProfileCover = async () => {
   const followrs = await getFollowers(user?.followers_url)
 
   return (
-    <div className="bg-primary w-full h-64 relative">
+    <div className="bg-base-300 w-full h-64 relative">
       <Image
         className="w-full h-full object-cover object-center"
         src={"/images/cover.jpg"}
