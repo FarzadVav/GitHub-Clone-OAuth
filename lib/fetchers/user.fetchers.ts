@@ -1,7 +1,7 @@
 import { cookieOptions, verifySession } from "@/lib/sessions"
-import UserT from "@/lib/types/user.type"
+import UserT from "@/lib/types/user.types"
 import { cookies } from "next/headers"
-import FollowerT from "../types/follower.type"
+import FollowerT from "../types/follower.types"
 
 const getUser = async () => {
   const session = cookies().get(cookieOptions.name)?.value

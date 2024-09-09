@@ -1,5 +1,5 @@
 import { verifySession } from "@/lib/sessions"
-import RepositoryT from "@/lib/types/repository.type"
+import RepositoryT from "@/lib/types/repository.types"
 
 const getRepositories = async () => {
   const session = await verifySession()

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
-import { cookieOptions } from "./lib/sessions"
+
+import { cookieOptions } from "@/lib/sessions"
 
 export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl

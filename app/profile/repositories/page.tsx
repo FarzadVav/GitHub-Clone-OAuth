@@ -1,5 +1,5 @@
 import RepoBox from "@/components/RepoBox"
-import getRepositories from "@/lib/fetchers/repositories.fetcher"
+import getRepositories from "@/lib/fetchers/repositories.fetchers"
 
 const Repositories = async () => {
   const repos = await getRepositories()

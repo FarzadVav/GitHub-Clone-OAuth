@@ -2,7 +2,7 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
 
 import { createDownloadUrl } from "@/lib/functions/repositories.functions"
 import getTimeAgo from "@/lib/getTimeAgo"
-import RepositoryT from "@/lib/types/repository.type"
+import RepositoryT from "@/lib/types/repository.types"
 
 const RepoBox = ({ ...repo }: RepositoryT) => {
   const downloadUrl = createDownloadUrl(repo.owner.login, repo.name, repo.default_branch)
