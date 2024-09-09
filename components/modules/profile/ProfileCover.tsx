@@ -15,7 +15,6 @@ import getUser, { getFollowers } from "@/lib/fetchers/user.fetcher"
 const ProfileCover = async () => {
   const user = await getUser()
   const followrs = await getFollowers(user?.followers_url)
-  console.log("user ------------------------>", user)
 
   return (
     <div className="bg-primary w-full h-64 relative">

@@ -28,7 +28,7 @@ export const decryptSession = async (session: string) => {
     const { payload } = await jwtVerify(session, key, { algorithms: ["HS256"] })
     return payload as SessionT
   } catch (error) {
-    console.log(error)
+    console.error(error)
     return null
   }
 }

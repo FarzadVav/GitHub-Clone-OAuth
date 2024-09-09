@@ -1,14 +1,13 @@
+import RepoBox from "@/components/RepoBox"
 import getRepositories from "@/lib/fetchers/repositories.fetcher"
 
 const Repositories = async () => {
   const repos = await getRepositories()
-  // @ts-ignore
-  console.log("repos --------------------->", repos[0])
 
   return (
-    <div>
+    <div className="w-full flex flex-wrap gap-3">
       {repos?.map((repo) => (
-        <div>{repo.name}</div>
+        <RepoBox key={repo.html_url} {...repo} />
       ))}
     </div>
   )

@@ -1,9 +1,14 @@
 type RepositoryT = {
   name: string
-  full_name: string
   description: string
-  url: string
+  html_url: string
+  default_branch: string
   private: boolean
+  owner: {
+    login: string
+    html_url: string
+  }
+  updated_at: string
 }
 
 export default RepositoryT
