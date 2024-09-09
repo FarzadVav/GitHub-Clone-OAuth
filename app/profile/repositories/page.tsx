@@ -1,5 +1,6 @@
 import RepoBox from "@/components/RepoBox"
 import getRepositories from "@/lib/fetchers/repositories.fetchers"
+import getUUID from "@/lib/getUUID"
 
 const Repositories = async () => {
   const repos = await getRepositories()
@@ -7,7 +8,7 @@ const Repositories = async () => {
   return (
     <div className="w-full flex flex-wrap gap-3">
       {repos?.map((repo) => (
-        <RepoBox key={repo.html_url} {...repo} />
+        <RepoBox key={getUUID()} {...repo} />
       ))}
     </div>
   )

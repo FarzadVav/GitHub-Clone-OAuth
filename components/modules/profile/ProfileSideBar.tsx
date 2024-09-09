@@ -9,6 +9,8 @@ import {
   SpeakerWaveIcon,
 } from "@heroicons/react/24/outline"
 
+import getUUID from "@/lib/getUUID"
+
 const links = [
   { icon: <HomeIcon className="size-4" />, name: "Home" },
   { icon: <BriefcaseIcon className="size-4" />, name: "Briefcase" },
@@ -29,7 +31,7 @@ const ProfileSideBar = () => {
       </div>
       <ul className="w-full h-[calc(100%-5.5rem)] mt-6 overflow-y-auto">
         {links.map((link) => (
-          <li key={link.name} className="mx-auto w-max mt-1 first:mt-0">
+          <li key={getUUID()} className="mx-auto w-max mt-1 first:mt-0">
             <button className="btn btn-square btn-ghost" title={link.name} aria-label={link.name}>
               {link.icon}
             </button>

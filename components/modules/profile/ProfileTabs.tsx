@@ -4,6 +4,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { PropsWithChildren } from "react"
 
+import getUUID from "@/lib/getUUID"
+
 const tabs = [
   { name: "Overview", href: "/profile" },
   { name: "Repositories", href: "/profile/repositories" },
@@ -18,8 +20,8 @@ const ProfileTabs = ({ children }: PropsWithChildren) => {
   return (
     <>
       <div className="border-b-2 border-base-content/10 w-full flex items-center gap-3 pb-6 mb-6">
-        {tabs.map((tab, i) => (
-          <Link key={i} href={tab.href}>
+        {tabs.map((tab) => (
+          <Link key={getUUID()} href={tab.href}>
             <button className={`btn ${pathname.endsWith(tab.href) ? "btn-primary" : "btn-ghost"}`}>
               {tab.name}
             </button>
