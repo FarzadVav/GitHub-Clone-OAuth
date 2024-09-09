@@ -3,7 +3,7 @@ import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import { SignJWT, jwtVerify } from "jose"
 
-import SessionT from "@/lib/types/session.types"
+import SessionT from "@/lib/types/session.type"
 
 export const cookieOptions = {
   name: "session",

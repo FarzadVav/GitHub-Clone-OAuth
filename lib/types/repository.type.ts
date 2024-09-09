@@ -1,4 +1,4 @@
-type Repository = {
+type RepositoryT = {
   name: string
   full_name: string
   description: string
@@ -6,4 +6,4 @@ type Repository = {
   private: boolean
 }
 
-export default Repository
+export default RepositoryT
