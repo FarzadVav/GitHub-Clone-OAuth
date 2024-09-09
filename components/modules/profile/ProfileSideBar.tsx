@@ -25,7 +25,7 @@ const ProfileSideBar = () => {
           <Bars3Icon className="size-4" />
         </button>
       </div>
-      <ul className="w-full h-[calc(100%-5.5rem)] mt-6 overflow-y-auto">
+      <ul className="w-full h-[calc(100%-5.5rem)] overflow-y-auto">
         {links.map((link) => (
           <li key={getUUID()} className="mx-auto w-max mt-1 first:mt-0">
             <button className="btn btn-square btn-ghost" title={link.name} aria-label={link.name}>
