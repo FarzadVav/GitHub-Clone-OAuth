@@ -1,15 +1,19 @@
-import getRepositories from "@/lib/fetchers/repositories.fetcher"
+import Link from "next/link"
 
 const Profile = async () => {
-  const repositories = await getRepositories()
-  // @ts-ignore
-  // console.log("repositories --------------------->", repositories[0])
-
   return (
     <div>
-      {repositories?.map((repo) => (
-        <div>{repo.name}</div>
-      ))}
+      <h3 className="text-xl font-bold">This is overview page</h3>
+      <p className="mt-1">
+        Please switch to{" "}
+        <Link className="ghost-link-btn text-primary" href={"/profile/repositories"}>
+          /repositories
+        </Link>{" "}
+        page to see your public and private GitHub repos ✌️
+      </p>
+      <p className="text-base-content/75 italic select-none mt-12">
+        Created with ♥ by Farzad Vahdati
+      </p>
     </div>
   )
 }
