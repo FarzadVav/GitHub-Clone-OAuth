@@ -1,4 +1,6 @@
-import { ArrowLeftStartOnRectangleIcon, BellIcon, Cog6ToothIcon } from "@heroicons/react/24/outline"
+import { BellIcon, Cog6ToothIcon } from "@heroicons/react/24/outline"
+
+import SignOutButton from "@/components/SignOutButton"
 
 const ProfileHeader = () => {
   return (
@@ -12,10 +14,7 @@ const ProfileHeader = () => {
         <kbd className="kbd kbd-xs">k</kbd>
       </label>
       <div className="flex items-center gap-1 ml-auto">
-        <button className="btn btn-ghost text-error hover:bg-error/20">
-          <span>Sign out</span>
-          <ArrowLeftStartOnRectangleIcon className="size-4 -scale-x-100" />
-        </button>
+        <SignOutButton />
         <button className="btn btn-square btn-ghost">
           <BellIcon className="size-4" />
         </button>
