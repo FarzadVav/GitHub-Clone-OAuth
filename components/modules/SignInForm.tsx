@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import SignInButton from "../SignInButton"
+
+import SignInButton from "@/components/SignInButton"
 
 const SignInForm = () => {
   return (

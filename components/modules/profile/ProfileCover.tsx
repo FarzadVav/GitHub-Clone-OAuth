@@ -10,7 +10,7 @@ import {
   PhotoIcon,
 } from "@heroicons/react/24/outline"
 
-import getUser, { getFollowers } from "@/lib/fetchers/user.fetchers"
+import { getUser, getFollowers } from "@/lib/fetchers/user.fetchers"
 
 const ProfileCover = async () => {
   const user = await getUser()

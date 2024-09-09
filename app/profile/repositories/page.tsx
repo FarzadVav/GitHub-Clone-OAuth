@@ -1,5 +1,5 @@
 import RepoBox from "@/components/RepoBox"
-import getRepositories from "@/lib/fetchers/repositories.fetchers"
+import { getRepositories } from "@/lib/fetchers/repositories.fetchers"
 import getUUID from "@/lib/getUUID"
 
 const Repositories = async () => {
