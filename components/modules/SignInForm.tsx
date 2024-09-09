@@ -2,11 +2,9 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid"
+import SignInButton from "../SignInButton"
 
 const SignInForm = () => {
-  const githubAuthorizeUrl = `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&scope=repo`
-
   return (
     <motion.form
       className="ring-2 ring-base-content/10 bg-base-200 p-6 rounded-lg"
@@ -40,10 +38,7 @@ const SignInForm = () => {
         in my goal!
       </p>
       <div className="border-t border-base-content/5 flex items-center pt-3 mt-3">
-        <a href={githubAuthorizeUrl} className="btn btn-primary font-bold">
-          <span>Sign in</span>
-          <ArrowTopRightOnSquareIcon className="size-4" />
-        </a>
+        <SignInButton />
         <a
           className="btn btn-link text-base-content ml-3"
           href="https://github.com"
