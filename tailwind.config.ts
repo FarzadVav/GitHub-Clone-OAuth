@@ -8,8 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      container: { center: true, padding: { "default": "1rem", "sm": "2rem" } },
-      colors: {},
+      container: {
+        center: true,
+        padding: { "DEFAULT": "1rem", "sm": "2rem" }
+      },
+      screens: {
+        "sm": "540px"
+      },
     },
   },
   plugins: [
