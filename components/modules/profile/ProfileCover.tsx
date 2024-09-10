@@ -1,10 +1,8 @@
 import Image from "next/image"
 import {
   ArrowUpRightIcon,
-  ArrowUpTrayIcon,
   CalendarIcon,
   ClockIcon,
-  DocumentTextIcon,
   FolderPlusIcon,
   MapPinIcon,
   PencilSquareIcon,
@@ -13,6 +11,7 @@ import {
 
 import { getUser, getFollowers } from "@/lib/fetchers/user.fetchers"
 import ProfileFollowersButton from "./ProfileFollowersButton"
+import ProfileMoreDetailsButton from "./ProfileMoreDetailsButton"
 
 const ProfileCover = async () => {
   const user = await getUser()
@@ -63,10 +62,7 @@ const ProfileCover = async () => {
           <div className="flex items-center flex-wrap gap-x-4 gap-y-1">
             <ProfileFollowersButton followrs={followrs || []} />
 
-            <button className="ghost-link-btn italic font-semibold md:hidden">
-              <span>More details</span>
-              <DocumentTextIcon strokeWidth={2} className="size-4" />
-            </button>
+            <ProfileMoreDetailsButton user={user} />
 
             <div className="flex items-center gap-3 max-md:hidden">
               <div className="flex items-center">
