@@ -4,6 +4,6 @@
 
 @layer components {
   .ghost-link-btn {
-    @apply transition-opacity hover:underline active:opacity-75;
+    @apply flex items-center gap-x-2 transition-opacity hover:underline active:opacity-75;
   }
 }

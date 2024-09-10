@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useId } from "react"
+import { UsersIcon } from "@heroicons/react/24/outline"
 
 import { FollowerT } from "@/lib/types/follower.types"
 import Modal from "@/components/Modal"
@@ -14,7 +15,8 @@ const ProfileFollowersButton = ({ followrs }: { followrs: FollowerT[] }) => {
   return (
     <>
       <button className="ghost-link-btn italic font-semibold" onClick={() => showModalHandler(id)}>
-        {followrs.length} Followers
+        <span>{followrs.length} Followers</span>
+        <UsersIcon strokeWidth={2} className="size-4 lg:hidden" />
       </button>
 
       <Modal id={id}>

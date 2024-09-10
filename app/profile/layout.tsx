@@ -11,7 +11,7 @@ const ProfileLayout = ({ children }: Readonly<{ children: React.ReactNode }>) =>
         <ProfileHeader />
         <div className="bg-base-200 w-full h-[calc(100%-4rem)] rounded-tl-lg overflow-y-auto">
           <ProfileCover />
-          <div className="w-full p-6 mt-32">
+          <div className="w-full p-6 mt-36">
             <ProfileTabs>{children}</ProfileTabs>
           </div>
         </div>
