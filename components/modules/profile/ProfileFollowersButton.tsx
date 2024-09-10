@@ -1,11 +1,12 @@
 "use client"
 
+import Image from "next/image"
 import { useId } from "react"
 
 import { FollowerT } from "@/lib/types/follower.types"
 import Modal from "@/components/Modal"
 import showModalHandler from "@/lib/showModal"
-import Image from "next/image"
+import getUUID from "@/lib/getUUID"
 
 const ProfileFollowersButton = ({ followrs }: { followrs: FollowerT[] }) => {
   const id = useId()
@@ -18,7 +19,10 @@ const ProfileFollowersButton = ({ followrs }: { followrs: FollowerT[] }) => {
 
       <Modal id={id}>
         {followrs.map((user) => (
-          <div className="bg-base-300 w-full flex items-center p-3 mt-1 first:mt-0 rounded">
+          <div
+            key={getUUID()}
+            className="bg-base-300 w-full flex items-center p-3 mt-1 first:mt-0 rounded"
+          >
             <div className="bg-base-100 size-10 rounded-full">
               <Image
                 className="size-full rounded-full"
