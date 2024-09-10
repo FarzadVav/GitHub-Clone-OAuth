@@ -5,8 +5,8 @@ export const GET = async (request: Request) => {
   const url = new URL(request.url)
   const code = url.searchParams.get("code") || ""
 
-  const clientId = process.env.NEXT_PUBLIC_CLIENT_ID
-  const clientSecret = process.env.NEXT_PUBLIC_CLIENT_SECRET
+  const clientId = process.env.CLIENT_ID
+  const clientSecret = process.env.CLIENT_SECRET
   if (!clientId || !clientSecret || !code) {
     return Response.json(
       { message: "clientId or clientSecret or auth-code is missing :((" },

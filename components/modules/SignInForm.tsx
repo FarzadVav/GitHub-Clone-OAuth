@@ -27,6 +27,7 @@ const SignInForm = () => {
             alt="github cat gif"
             width={120}
             height={120}
+            unoptimized
           />
         </motion.div>
         <h1 className="font-extrabold text-2xl sm:ml-3 max-sm:text-center">
