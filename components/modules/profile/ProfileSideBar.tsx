@@ -19,7 +19,7 @@ const links = [
 
 const ProfileSideBar = () => {
   return (
-    <div className="w-16 h-full">
+    <div className="w-16 h-full max-sm:hidden">
       <div className="size-16 flex justify-center items-center">
         <button className="btn btn-square" aria-label="Menu button">
           <Bars3Icon className="size-4" />

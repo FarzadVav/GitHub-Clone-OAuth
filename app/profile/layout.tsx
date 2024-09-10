@@ -7,10 +7,10 @@ const ProfileLayout = ({ children }: Readonly<{ children: React.ReactNode }>) =>
   return (
     <div className="w-full h-screen flex">
       <ProfileSideBar />
-      <div className=" h-full w-[calc(100%-4rem)]">
+      <div className=" h-full w-full sm:w-[calc(100%-4rem)]">
         <ProfileHeader />
         <div className="bg-base-200 w-full h-[calc(100%-4rem)] rounded-tl-lg overflow-y-auto">
-          {/* <ProfileCover /> */}
+          <ProfileCover />
           <div className="w-full p-6 mt-48 sm:mt-36">
             <ProfileTabs>{children}</ProfileTabs>
           </div>

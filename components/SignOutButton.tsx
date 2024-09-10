@@ -16,7 +16,7 @@ const SignOutButton = () => {
         className="btn btn-ghost text-error hover:bg-error/20"
         onClick={() => showModalHandler(id)}
       >
-        <span>Sign out</span>
+        <span className="max-sm:hidden">Sign out</span>
         <ArrowLeftStartOnRectangleIcon className="size-4 -scale-x-100" />
       </button>
 
