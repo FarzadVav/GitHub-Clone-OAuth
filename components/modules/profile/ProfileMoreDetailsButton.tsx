@@ -33,6 +33,7 @@ const ProfileMoreDetailsButton = ({ user }: { user: UserT | null }) => {
           <ClockIcon className="size-4" />
           <span className="ml-3">{new Date(user?.updated_at || "").toLocaleDateString()}</span>
         </div>
+        <p className="text-base-content/75 mt-3">{user?.bio}</p>
       </Modal>
     </>
   )

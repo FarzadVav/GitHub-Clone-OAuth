@@ -19,7 +19,7 @@ const ProfileTabs = ({ children }: PropsWithChildren) => {
 
   return (
     <>
-      <div className="w-full flex items-center gap-3 pb-3 mb-3 overflow-x-auto sm:border-b-2 sm:border-base-content/10 sm:pb-6 sm:mb-3">
+      <div className="w-full flex items-center gap-3 pb-3 mb-3 overflow-x-auto sm:border-b-2 sm:border-base-content/10 sm:pb-6 sm:mb-6">
         {tabs.map((tab) => (
           <Link className="min-w-max max-w-max" key={getUUID()} href={tab.href}>
             <button className={`btn ${pathname.endsWith(tab.href) ? "btn-primary" : "btn-ghost"}`}>

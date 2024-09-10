@@ -9,7 +9,7 @@ const RepoBox = ({ ...repo }: RepositoryT) => {
 
   return (
     <div className="bg-base-100 w-full flex flex-col p-6 rounded-lg md:w-[calc(50%-0.75rem/2)]">
-      <div className="flex items-center flex-wrap">
+      <div className="flex items-center flex-wrap gap-y-1">
         <a
           className="ghost-link-btn text-primary w-max text-xl font-bold"
           href={repo.html_url}
@@ -20,10 +20,6 @@ const RepoBox = ({ ...repo }: RepositoryT) => {
 
         <span className="border text-xs py-0.5 px-2 ml-3 rounded-full">
           {repo.private ? "Private" : "Public"}
-        </span>
-
-        <span className="text-sm ml-auto">
-          Updated {getTimeAgo.format(new Date(repo.updated_at))}
         </span>
       </div>
 
@@ -39,10 +35,15 @@ const RepoBox = ({ ...repo }: RepositoryT) => {
         {repo.description || "Description is empty..."}
       </p>
 
-      <a className="btn w-max mt-auto" href={downloadUrl} download>
-        <span>Download zip</span>
-        <ArrowDownTrayIcon className="size-4" />
-      </a>
+      <div className="flex items-center flex-wrap gap-y-1">
+        <a className="btn w-max mt-auto" href={downloadUrl} download>
+          <span>Download zip</span>
+          <ArrowDownTrayIcon className="size-4" />
+        </a>
+        <span className="text-sm ml-auto">
+          Updated {getTimeAgo.format(new Date(repo.updated_at))}
+        </span>
+      </div>
     </div>
   )
 }

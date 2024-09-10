@@ -31,7 +31,7 @@ const ProfileCover = async () => {
         <button className="btn btn-square" title="edit cover" aria-label="edit cover">
           <PhotoIcon className="size-4" />
         </button>
-        <button className="btn btn-square ml-1" title="edit profile" aria-label="edit profile">
+        <button className="btn btn-square ml-3" title="edit profile" aria-label="edit profile">
           <PencilSquareIcon className="size-4" />
         </button>
       </div>

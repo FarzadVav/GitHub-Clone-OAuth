@@ -30,10 +30,10 @@ const SignInForm = () => {
           />
         </motion.div>
         <h1 className="font-extrabold text-2xl sm:ml-3 max-sm:text-center">
-          Please sign to your <br className="max-sm:hidden" /> GitHub account{" "}
+          Please sign to your <br className="max-sm:hidden" /> GitHub account
         </h1>
       </div>
-      <p className="text-base-content/75 max-w-md text-justify max-sm:mt-1">
+      <p className="text-base-content/75 text-center max-sm:mt-1 sm:text-justify sm:max-w-md">
         Lorem with good structure ipsum dolor sit amet consectetur, adipisicing elit. Impedit nulla
         and hello world ea animi corporis possimus dolorem culpa dolorum fugiat perspiciatis earum
         in my goal!
