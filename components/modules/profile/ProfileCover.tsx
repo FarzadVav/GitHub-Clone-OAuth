@@ -27,7 +27,7 @@ const ProfileCover = async () => {
         height={2000}
       />
 
-      <div className="flex items-center py-3 absolute bottom-0 right-6">
+      <div className="flex items-center py-3 absolute right-6 sm:bottom-0 max-sm:top-0">
         <button className="btn btn-square" title="edit cover" aria-label="edit cover">
           <PhotoIcon className="size-4" />
         </button>
@@ -36,9 +36,9 @@ const ProfileCover = async () => {
         </button>
       </div>
 
-      <div className="w-full h-48 flex px-6 absolute -bottom-36 left-0">
+      <div className="w-full h-48 flex px-6 absolute -bottom-48 left-0 sm:-bottom-36">
         <Image
-          className="size-48 object-cover object-center rounded-lg"
+          className="size-48 object-cover object-center rounded-lg max-sm:hidden"
           src={user?.avatar_url || ""}
           alt={user?.name || "github avatar"}
           width={192}
@@ -50,7 +50,14 @@ const ProfileCover = async () => {
           <FolderPlusIcon strokeWidth={2} className="size-4" />
         </button>
 
-        <div className="w-[calc(100%-12rem)] h-36 flex flex-col justify-center gap-1 px-3 pt-3 mt-auto">
+        <div className="w-full h-full flex flex-col justify-center gap-1 px-3 pt-12 mt-auto sm:w-[calc(100%-12rem)] sm:h-36 sm:pt-3 max-sm:items-center">
+          <Image
+            className="size-32 object-cover object-center rounded-full absolute -top-16 sm:hidden"
+            src={user?.avatar_url || ""}
+            alt={user?.name || "github avatar"}
+            width={128}
+            height={128}
+          />
           <a className="ghost-link-btn w-max" href={user?.html_url} target="_blank">
             <h2 className="font-extrabold text-xl lg:text-3xl">
               {user?.login}
@@ -59,7 +66,7 @@ const ProfileCover = async () => {
             <ArrowUpRightIcon strokeWidth={2} className="size-4 lg:size-6" />
           </a>
 
-          <div className="flex items-center flex-wrap gap-x-4 gap-y-1">
+          <div className="flex items-center flex-wrap gap-x-4 gap-y-1 max-sm:justify-center">
             <ProfileFollowersButton followrs={followrs || []} />
 
             <ProfileMoreDetailsButton user={user} />
