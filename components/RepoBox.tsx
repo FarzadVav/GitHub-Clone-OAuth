@@ -8,8 +8,8 @@ const RepoBox = ({ ...repo }: RepositoryT) => {
   const downloadUrl = createDownloadUrl(repo.owner.login, repo.name, repo.default_branch)
 
   return (
-    <div className="bg-base-100 w-[calc(50%-0.75rem/2)] flex flex-col p-6 rounded-lg">
-      <div className="flex items-center">
+    <div className="bg-base-100 w-full flex flex-col p-6 rounded-lg md:w-[calc(50%-0.75rem/2)]">
+      <div className="flex items-center flex-wrap">
         <a
           className="ghost-link-btn text-primary w-max text-xl font-bold"
           href={repo.html_url}
