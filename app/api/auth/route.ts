@@ -15,7 +15,7 @@ export const GET = async (request: Request) => {
   }
 
   const githubAccessTokenUrl = "https://github.com/login/oauth/access_token"
-  const fetchUrlParams = `?NEXT_PUBLIC_CLIENT_ID=${clientId}&NEXT_PUBLIC_CLIENT_SECRET=${clientSecret}&code=${code}`
+  const fetchUrlParams = `?client_id=${clientId}&client_secret=${clientSecret}&code=${code}`
   const githubResponse = await fetch(githubAccessTokenUrl + fetchUrlParams, {
     headers: {
       Accept: "application/json"
